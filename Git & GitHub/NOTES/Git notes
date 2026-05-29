@@ -1,0 +1,80 @@
+Git and Github 
+git is software
+github is a service (to host git online or on internet )
+
+git is an open source version control system (used to track changes in file/folder )
+
+github is a web-based hosting service for git repository, github is an online plateform to store and share your codes with others 
+
+Repository is a collection of files and directories that are stored together. it is a way to store and manage your code. it is like a folder but more than a folder
+
+git --version // to check current version of git
+git status // to check status of repository
+
+git config --global user.email "youremail@gmail.com"
+git config --global user.name "your name"
+git config --list //this will show you all the setting you have changed
+
+>> stage
+git init //create new git repository
+git add <file> <file2> // add selected files in repo
+git add . // add all files to repo at once
+git status //to check repo status
+
+>> commit
+git commit -m "message" // to permanentaly store those staged changes into repository 
+
+>> logs
+git log  //show history of repository
+git log --oneline  //show history of repository in oneline, or in short
+
+>> change default code editor
+git config --global core.editor "code --wait"
+
+>> gitignore
+gitignore is a file that tells git which file and folder to ignore. Basically the files under gitignore is not get track 
+
+
+>> Branches in git
+allow you to create a separate line of development that can be worked on independently of the main branch. This can be useful when you want to make changes to a project without affecting the main branch or when you want to work on a new feature or bug fix.
+
+>>Head in git
+head is a pointer to the current branch that you are working on. It points to the latest commit in the current branch. when you create a new branch it is automatically set as the head of that branch
+
+>> creating new branches
+git branch
+git branch <branchname>
+git switch <branchname>
+git log
+git switch -c <branchname>
+git checkout <branchname>
+
+git branch  //This command lists all the branches in the current repository.
+
+git branch bug-fix //This command creates a new branch called bug-fix.
+
+git switch bug-fix //This command switches to the bug-fix branch.
+
+git log //This command shows the commit history for the current branch.
+
+git switch main //This command switches to the main branch.
+
+git switch -c dark-mode //This command creates a new branch called dark-mode. the -c flag is used to create a new branch.
+
+git checkout orange-mode //This command switches to the orange-mode branch.
+
+
+
+
+
+
+{git init}--->[working directory]--->{git add}--->[staging area]--->{git commit}--->[ repo ]--->{git push}--->[ Github ]
+
+ls //stands for "list", used to display files and directories
+dir  //shows all directories
+ls -force // show all files, including hidden files too
+
+{
+    cd .<filename> // to get in that directory 
+    cd ..  // to go to parent directory(or one level up from current directory)
+}

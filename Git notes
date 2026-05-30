@@ -64,6 +64,21 @@ git switch -c dark-mode //This command creates a new branch called dark-mode. th
 git checkout orange-mode //This command switches to the orange-mode branch.
 
 
+>> merging Branches
+Merging is about bringing changes from one branch to another.
+In Git we have two types of merges :
+>Fast-Forward Merges (If branches have not diverged)
+>3-Way Merges (if branches have diverged)
+
+>>fast forward merge
+This one is easy as branch that you are trying to merge is usually ahead and there are no conflicts.
+When you are done working on a branch, you can merge it back into the main branch. This is done using the following command
+
+git checkout <branch>
+git merge <branch>
+
+git checkout main // This command switches to the main branch.
+git merge red // This command merges the red branch into the main branch.
 
 
 

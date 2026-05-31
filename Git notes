@@ -15,7 +15,12 @@ git config --global user.email "youremail@gmail.com"
 git config --global user.name "your name"
 git config --list //this will show you all the setting you have changed
 
->> stage
+
+>> workflow
+
+{git init}--->[working directory]--->{git add}--->[staging area]--->{git commit}--->[ repo ]--->{git push}--->[ Github ]
+
+>>stage
 git init //create new git repository
 git add <file> <file2> // add selected files in repo
 git add . // add all files to repo at once
@@ -51,17 +56,54 @@ git checkout <branchname>
 
 git branch  //This command lists all the branches in the current repository.
 
-git branch bug-fix //This command creates a new branch called bug-fix.
+git branch red //This command creates a new branch called red.
 
-git switch bug-fix //This command switches to the bug-fix branch.
+git switch red //This command switches to the red branch.
 
 git log //This command shows the commit history for the current branch.
 
 git switch main //This command switches to the main branch.
 
-git switch -c dark-mode //This command creates a new branch called dark-mode. the -c flag is used to create a new branch.
+git switch -c green //This command creates a new branch called green. the -c flag is used to create a new branch.
 
-git checkout orange-mode //This command switches to the orange-mode branch.
+git checkout yellow //This command switches to the yellow branch.
+
+>>merging branches
+Merging is about bringing changes from one branch to another.
+In Git we have two types of merges :
+>Fast-Forward Merges (If branches have not diverged)
+>3-Way Merges (if branches have diverged)
+
+>>fast forward merges
+This one is easy as branch that you are trying to merge is usually ahead and there are no conflicts.
+When you are done working on a branch, you can merge it back into the main branch.
+
+git checkout <branchname>
+git merge <branchname>
+
+git checkout main - This command switches to the main branch.
+git merge red - This command merges the red branch into the main branch
+
+>> 3-way merge
+In this type of merge, the main branch has additional commits that are not present in the red branch. This is not a fast-forward merge. Here git looks at 3 different commits [common ancestor of branches + tips of each branch] and combines the changes into one merge commit.
+
+>>managing conflicts
+there are no shortcuts to resolve conflicts. You have to manually resolve the conflicts. Decide, what to keep and what to discard. VSCode has a built-in merge tool that can help you resolve the conflicts.
+
+>> Renaming a branch
+git branch -m <old-branch-name> <new-branch-name>
+
+git branch -m black white // the branch name black change in white
+
+>>Delete a branch 
+git branch -d <branchname>
+
+git branch -d white // branch white is deleted
+
+>>checkout a branch
+git checkout <branchname>
+
+git checkout main //get in main branch
 
 
 >> merging Branches
@@ -83,7 +125,6 @@ git merge red // This command merges the red branch into the main branch.
 
 
 
-{git init}--->[working directory]--->{git add}--->[staging area]--->{git commit}--->[ repo ]--->{git push}--->[ Github ]
 
 ls //stands for "list", used to display files and directories
 dir  //shows all directories

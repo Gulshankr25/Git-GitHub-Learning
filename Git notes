@@ -134,3 +134,14 @@ ls -force // show all files, including hidden files too
     cd .<filename> // to get in that directory 
     cd ..  // to go to parent directory(or one level up from current directory)
 }
+
+{
+    when you have make changes in a file of x-branch but you want to save that changes in file of y-branch, then you decide to switch to y-branch but because of uncommited changes it restrict you to switch your branch then you can use following commands:
+
+    git stash 
+    git switch <branchname> //example:y-branch
+    git stash pop
+
+    this transfer your uncommited changes to y-branch
+    
+}

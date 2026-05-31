@@ -122,6 +122,71 @@ git merge <branch>
 git checkout main // This command switches to the main branch.
 git merge red // This command merges the red branch into the main branch.
 
+>>Diff, Stash and Tags
+>git diff
+The git diff is an informative command that shows the differences between two commits. It is used to compare the changes made in one commit with the changes made in another commit. Git consider the changed versions of same file as two different files. Then it gives names to these two files and shows the differences between them.
+
+>How to Read the Diff Output
+a/ – the original file (before changes)
+b/ – the updated file (after changes)
+--- – marks the beginning of the original file
++++ – marks the beginning of the updated file
+@@ – shows the line numbers and position of changes
+
+Here the file A and file B are the same file but different versions.
+
+Git will show you the changes made in the file A and file B. It will also show you the line number where the change occurred along with little preview of the change.
+
+git deff //This command shows the unstaged changes in your working directory compared to the staging area.
+
+git diff --staged //This command shows the changes between your last commit and the staging area
+
+git diff <branch-name-one> <branch-name-two> //This command compares the difference between two branches.
+
+git diff branch-name-one..branch-name-two //Another way to compare the difference between two branches 
+
+git diff <commit-hash-one> <commit-hash-two> //This command compares the difference between two commits.
+
+>git stash
+Stash is a way to save your changes in a temporary location. It’s useful when switching branches without losing work.
+
+git stash //Stash is a way to save your changes in a temporary location.
+
+-naming stash
+git stash save "work in progress on X feature" //You can also name the stash
+-view the stash list
+git stash list 
+-apply most recent stash
+git stash apply 
+-apply specific stash
+git stash apply stash@{0} //Here stash@{0} is the name of the stash
+-apply and drop a stash
+git stash pop
+-drop the stash
+git stash drop
+-applying stash to specific branch
+git stash apply stash@{0} <branch-name>
+-clearing the stash
+git stash clear
+
+>Git Tags
+Tags are a way to mark a specific point in your repository. They are useful when you want to remember a specific version of your code or when you want to refer to a specific commit. Tags are like sticky notes that you can attach to your commits.
+
+git tag <tag-name> //create a tag
+git tag -a <tag-name> -m "message" //create a annotated tag
+git tag //list all tags
+git tag <tag-name> <commit-hash> //tagging a specific commit
+git push origin <tag-name> //push tag to remote repository
+git tag -d <tag-name> //delete a tag
+git push origin :<tag-name> //delete tag on remote repository
+
+
+
+
+
+
+
+
 
 
 
@@ -143,5 +208,5 @@ ls -force // show all files, including hidden files too
     git stash pop
 
     this transfer your uncommited changes to y-branch
-    
+
 }
